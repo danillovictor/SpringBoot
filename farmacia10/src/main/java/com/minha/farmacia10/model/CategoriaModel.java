@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;  
@@ -20,14 +19,13 @@ public class CategoriaModel {
 	private long id;
 	
 	@NotNull
-	@Size (min = 2, max = 100)
 	private String descricao;
 	
 	@NotNull
 	private boolean ativo;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("categoria")
+	@JsonIgnoreProperties ("categoria")
 	private ProdutoModel2 produto;
 
 	public long getId() {
